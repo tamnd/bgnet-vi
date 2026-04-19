@@ -12,8 +12,8 @@ This document tracks the translation progress for Beej's Guide to Network Progra
 | bgnet_part_0400_4to6.md | Jumping from IPv4 to IPv6 | done |
 | bgnet_part_0500_syscalls.md | System Calls or Bust | done |
 | bgnet_part_0600_clientserver.md | Client-Server Background | done |
-| bgnet_part_0700_advanced.md | Slightly Advanced Techniques | in review |
-| bgnet_part_0800_questions.md | Common Questions | not started |
+| bgnet_part_0700_advanced.md | Slightly Advanced Techniques | done |
+| bgnet_part_0800_questions.md | Common Questions | in review |
 | bgnet_part_0900_man.md | Man Pages | not started |
 | bgnet_part_1000_ref.md | More References | not started |
 
