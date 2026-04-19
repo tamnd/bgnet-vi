@@ -29,7 +29,7 @@ jobs:
           echo "Releasing tag: $TAG"
 
       - name: Checkout at tag
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ steps.tag.outputs.tag }}
           submodules: recursive
@@ -45,10 +45,10 @@ jobs:
           echo "Upstream: $UPSTREAM_VERSION @ $UPSTREAM_COMMIT"
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Build container image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile.vi
@@ -130,7 +130,7 @@ jobs:
           cat release_notes.md
 
       - name: Publish GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
