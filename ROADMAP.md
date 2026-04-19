@@ -6,8 +6,8 @@ This document tracks the translation progress for Beej's Guide to Network Progra
 
 | File | Title | Status |
 |------|-------|--------|
-| bgnet_part_0100_intro.md | Introduction | in progress |
-| bgnet_part_0200_socket.md | What is a Socket? | not started |
+| bgnet_part_0100_intro.md | Introduction | done |
+| bgnet_part_0200_socket.md | What is a Socket? | in review |
 | bgnet_part_0300_addr_struct.md | IP Addresses, structs, and Data Munging | not started |
 | bgnet_part_0400_4to6.md | Jumping from IPv4 to IPv6 | not started |
 | bgnet_part_0500_syscalls.md | System Calls or Bust | not started |
