@@ -1,4 +1,4 @@
-# Beej's Guide to Network Programming &mdash; Vietnamese
+# Beej's Guide to Network Programming (Vietnamese)
 
 > [Tiếng Việt](README.md) &middot; English
 
@@ -29,19 +29,19 @@ for you.
 
 Ten chapters, no fluff:
 
-1. Introduction &mdash; what this guide is, who it's for
-2. What is a Socket? &mdash; the big picture
-3. IP Addresses, `struct`s, and Data Munging &mdash; bytes, endianness,
-   `sockaddr`
-4. Jumping from IPv4 to IPv6 &mdash; what changed, what didn't
-5. System Calls or Bust &mdash; `socket()`, `bind()`, `listen()`,
-   `accept()`, `connect()`, `send()`, `recv()`, and friends
-6. Client-Server Background &mdash; your first real programs
-7. Slightly Advanced Techniques &mdash; `select()`, `poll()`, partial
-   `send()`s, serialization, broadcast
-8. Common Questions &mdash; the stuff people keep asking Beej
-9. Man Pages &mdash; a curated tour
-10. More References &mdash; where to go next
+1. **Introduction.** What this guide is, who it's for.
+2. **What is a Socket?** The big picture.
+3. **IP Addresses, `struct`s, and Data Munging.** Bytes, endianness,
+   `sockaddr`.
+4. **Jumping from IPv4 to IPv6.** What changed, what didn't.
+5. **System Calls or Bust.** `socket()`, `bind()`, `listen()`,
+   `accept()`, `connect()`, `send()`, `recv()`, and friends.
+6. **Client-Server Background.** Your first real programs.
+7. **Slightly Advanced Techniques.** `select()`, `poll()`, partial
+   `send()`s, serialization, broadcast.
+8. **Common Questions.** The stuff people keep asking Beej.
+9. **Man Pages.** A curated tour.
+10. **More References.** Where to go next.
 
 ## Status
 

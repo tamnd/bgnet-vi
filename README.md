@@ -1,4 +1,4 @@
-# Beej's Guide to Network Programming &mdash; Bản tiếng Việt
+# Beej's Guide to Network Programming (Bản tiếng Việt)
 
 > Tiếng Việt &middot; [English](README.en.md)
 
@@ -29,20 +29,20 @@ bạn đấy.
 
 Mười chương, không dài dòng:
 
-1. Giới thiệu &mdash; tài liệu này là gì, dành cho ai
-2. Socket là gì? &mdash; bức tranh tổng thể
-3. Địa chỉ IP, `struct`, và xử lý dữ liệu &mdash; byte, endianness,
-   `sockaddr`
-4. Từ IPv4 nhảy sang IPv6 &mdash; cái gì đổi, cái gì giữ nguyên
-5. System call hoặc không gì cả &mdash; `socket()`, `bind()`,
+1. **Giới thiệu.** Tài liệu này là gì, dành cho ai.
+2. **Socket là gì?** Bức tranh tổng thể.
+3. **Địa chỉ IP, `struct`, và xử lý dữ liệu.** Byte, endianness,
+   `sockaddr`.
+4. **Từ IPv4 nhảy sang IPv6.** Cái gì đổi, cái gì giữ nguyên.
+5. **System call hoặc không gì cả.** `socket()`, `bind()`,
    `listen()`, `accept()`, `connect()`, `send()`, `recv()`, và bè
-   bạn
-6. Nền tảng client-server &mdash; chương trình thực sự đầu tiên của bạn
-7. Kỹ thuật nâng cao một chút &mdash; `select()`, `poll()`, `send()`
-   gửi từng phần, serialization, broadcast
-8. Câu hỏi thường gặp &mdash; những gì mọi người hay hỏi Beej
-9. Man page &mdash; một tour có chọn lọc
-10. Tài liệu tham khảo thêm &mdash; đi tiếp từ đâu
+   bạn.
+6. **Nền tảng client-server.** Chương trình thực sự đầu tiên của bạn.
+7. **Kỹ thuật nâng cao một chút.** `select()`, `poll()`, `send()`
+   gửi từng phần, serialization, broadcast.
+8. **Câu hỏi thường gặp.** Những gì mọi người hay hỏi Beej.
+9. **Man page.** Một tour có chọn lọc.
+10. **Tài liệu tham khảo thêm.** Đi tiếp từ đâu.
 
 ## Tình trạng
 
