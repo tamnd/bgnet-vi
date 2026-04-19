@@ -1,0 +1,47 @@
+FROM debian:bookworm-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates \
+        fontconfig \
+        make \
+        zip \
+        python3 \
+        python3-pip \
+        pandoc \
+        texlive-xetex \
+        texlive-latex-recommended \
+        texlive-latex-extra \
+        texlive-fonts-recommended \
+        texlive-fonts-extra \
+        texlive-lang-other \
+        fonts-dejavu \
+        fonts-liberation \
+        fonts-linuxlibertine \
+        lmodern \
+        imagemagick \
+        librsvg2-bin \
+        ncurses-bin \
+    && rm -rf /var/lib/apt/lists/*
+
+# Libertinus ships with texlive-fonts-extra but isn't exposed via fontconfig.
+# Copy the OpenType files into the system font tree and rebuild the cache so
+# xelatex's `--variable mainfont=Libertinus Serif` resolves correctly.
+RUN LIBERTINUS_SRC="$(find /usr/share/texlive -type d -name 'libertinus-fonts' -print -quit)" && \
+    if [ -n "$LIBERTINUS_SRC" ]; then \
+        mkdir -p /usr/local/share/fonts/libertinus && \
+        cp -v "$LIBERTINUS_SRC"/*.otf /usr/local/share/fonts/libertinus/ && \
+        fc-cache -f -v >/dev/null; \
+    else \
+        echo "Libertinus fonts not found in TeX Live" >&2; exit 1; \
+    fi
+
+# ImageMagick blocks PDF/PS conversion by default; loosen for the build.
+RUN sed -i 's@<policy domain="coder" rights="none" pattern="PDF" />@<policy domain="coder" rights="read|write" pattern="PDF" />@' /etc/ImageMagick-6/policy.xml || true
+
+WORKDIR /guide
+
+CMD ["bash", "scripts/build_vi.sh"]

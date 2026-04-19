@@ -15,6 +15,20 @@ src/split
 src/split-wide
 src/bgnet_temp*
 
+# Vietnamese build products (src_vi/)
+src_vi/bgnet.html
+src_vi/bgnet.epub
+src_vi/bgnet-wide.html
+src_vi/bg-css.html
+src_vi/bg-css-wide.html
+src_vi/bgnet_*.pdf
+src_vi/split
+src_vi/split-wide
+src_vi/bgnet_temp*
+
+# Staged site (generated, deployed via GH Actions)
+docs/
+
 __pycache__
 
 # Misc
