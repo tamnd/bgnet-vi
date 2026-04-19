@@ -12,6 +12,19 @@ PACKAGE="${PACKAGE:-bgnet}"
 SRCDIR="${SRCDIR:-src_vi}"
 DOCSDIR="${DOCSDIR:-docs}"
 
+# Parallel make threads. bgbspd's source.make also reads BGBS_THREADS via
+# its `MAKE_THREADS=-j $(BGBS_THREADS)` variable, but we only pass -j at
+# the outer invocation.
+if [[ -z "${JOBS:-}" ]]; then
+    if [[ -n "${BGBS_THREADS:-}" ]]; then
+        JOBS="$BGBS_THREADS"
+    elif command -v nproc >/dev/null 2>&1; then
+        JOBS="$(nproc)"
+    else
+        JOBS=4
+    fi
+fi
+
 if [[ ! -f bgbspd/source.make ]]; then
     echo "bgbspd/ submodule is missing. Run: git submodule update --init"
     exit 1
@@ -20,9 +33,9 @@ fi
 echo "==> Cleaning previous build products under $SRCDIR/"
 make -C "$SRCDIR" pristine >/dev/null 2>&1 || true
 
-echo "==> Building HTML, EPUB, and PDFs from $SRCDIR/"
+echo "==> Building HTML, EPUB, and PDFs from $SRCDIR/ (jobs=$JOBS)"
 # BGBSPD_BUILD_DIR is resolved relative to $SRCDIR (../../bgbspd -> ./bgbspd)
-make -C "$SRCDIR" BGBSPD_BUILD_DIR=../bgbspd all
+make -j "$JOBS" -C "$SRCDIR" BGBSPD_BUILD_DIR=../bgbspd all
 make -C "$SRCDIR" BGBSPD_BUILD_DIR=../bgbspd "$PACKAGE.epub"
 
 echo "==> Staging into $DOCSDIR/"
