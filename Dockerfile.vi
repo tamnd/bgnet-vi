@@ -37,6 +37,10 @@ RUN LIBERTINUS_SRC="$(find /usr/share/texlive -type d -name 'libertinus-fonts' -
 # ImageMagick blocks PDF/PS conversion by default; loosen for the build.
 RUN sed -i 's@<policy domain="coder" rights="none" pattern="PDF" />@<policy domain="coder" rights="read|write" pattern="PDF" />@' /etc/ImageMagick-6/policy.xml || true
 
+# bgbspd's source.make calls `magick ...`, which is ImageMagick 7's CLI.
+# Debian bookworm ships IMv6 (`convert`); add a compat shim.
+RUN printf '#!/bin/sh\nexec convert "$@"\n' > /usr/local/bin/magick && chmod +x /usr/local/bin/magick
+
 WORKDIR /guide
 
 CMD ["bash", "scripts/build_vi.sh"]

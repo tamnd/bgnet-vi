@@ -59,11 +59,15 @@ jobs:
       - name: Fix git safe.directory inside container
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      - name: Loosen ImageMagick PDF policy
+      - name: Loosen ImageMagick PDF policy and add magick shim
         run: |
           if [ -f /etc/ImageMagick-6/policy.xml ]; then
             sed -i 's@<policy domain="coder" rights="none" pattern="PDF" />@<policy domain="coder" rights="read|write" pattern="PDF" />@' /etc/ImageMagick-6/policy.xml || true
           fi
+          # bgbspd's source.make calls `magick`, which is IMv7 CLI. Debian bookworm
+          # ships IMv6 (`convert`); shim it.
+          printf '#!/bin/sh\nexec convert "$@"\n' > /usr/local/bin/magick
+          chmod +x /usr/local/bin/magick
 
       - name: Build guide
         run: bash scripts/build_vi.sh
