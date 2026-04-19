@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  packages: read
   pages: write
   id-token: write
 
@@ -20,28 +19,36 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Use the prebuilt image from ghcr.io (published by build-image.yml).
-    # All build tools (pandoc, texlive-full, Libertinus fonts, etc.) are
-    # already installed so this step just clones and runs make.
-    container:
-      image: ghcr.io/${{ github.repository }}-build:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           submodules: recursive
 
-      - name: Fix git safe.directory inside container
-        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Build the container image with GitHub Actions cache. First run on a
+      # branch is slow (texlive-full is ~5GB); subsequent runs restore from
+      # gha cache in ~30 seconds.
+      - name: Build container image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.vi
+          tags: bgnet-vi-build:local
+          load: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Build guide
-        env:
-          # Parallelise xelatex runs across PDF variants.
-          BGBS_THREADS: "4"
-        run: bash scripts/build_vi.sh
+        run: |
+          docker run --rm \
+            -v "$PWD:/guide" \
+            -w /guide \
+            -e BGBS_THREADS=4 \
+            bgnet-vi-build:local \
+            bash scripts/build_vi.sh
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
