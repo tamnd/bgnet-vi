@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# Convenience wrapper: build the guide inside the Dockerfile.vi image.
+# Convenience wrapper: build the guide inside the shared Beej build image.
 # Works with Podman or Docker; pass the binary via CONTAINER_BIN if needed.
-# Usage: ./scripts/build_vi_docker.sh [tag]
+# Usage: ./scripts/build_vi_docker.sh [image]
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-TAG="${1:-bgnet-vi-build:local}"
+IMAGE="${1:-ghcr.io/tamnd/beej-vi-docker:latest}"
 
 if [[ -n "${CONTAINER_BIN:-}" ]]; then
     BIN="$CONTAINER_BIN"
@@ -29,14 +29,14 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 fi
 
 echo "==> Using container engine: $BIN"
-echo "==> Building image $TAG"
-"$BIN" build -f Dockerfile.vi -t "$TAG" .
+echo "==> Pulling image $IMAGE"
+"$BIN" pull "$IMAGE"
 
 echo "==> Running build inside container"
 "$BIN" run --rm \
     -v "$ROOT:/guide$MOUNT_FLAG" \
     -w /guide \
-    "$TAG" \
+    "$IMAGE" \
     bash scripts/build_vi.sh
 
 echo "==> Built docs/ on host:"
