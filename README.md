@@ -1,186 +1,187 @@
-# Beej's Guide to Network Programming &mdash; Vietnamese
+# Beej's Guide to Network Programming &mdash; Bản tiếng Việt
 
-Vietnamese translation of [Beej's Guide to Network Programming][bgnet] by
-Brian "Beej Jorgensen" Hall. Free to read, free to share, just like the
-original.
+> Tiếng Việt &middot; [English](README.en.md)
 
-> Hey! Socket programming got you down? `man` pages not really cutting
-> it? You want to write cool Internet programs in C but don't have time
-> to wade through a gob of `struct`s?
+Bản dịch tiếng Việt của [Beej's Guide to Network Programming][bgnet],
+tác giả Brian "Beej Jorgensen" Hall. Đọc miễn phí, chia sẻ thoải mái,
+giống hệt như bản gốc.
+
+> Này! Lập trình socket đang hành bạn? Đọc trang `man` mà chả ra đâu vào
+> đâu? Bạn muốn viết mấy chương trình Internet ngầu ngầu bằng C nhưng
+> không có thời gian lội qua đống `struct`?
 >
-> Well, guess what. Beej already did that nasty business, and now it's
-> available in Vietnamese too.
+> Mà đoán xem. Beej đã lội qua cái đống đó rồi, và giờ bạn có thể đọc
+> bằng tiếng Việt.
 
 [bgnet]: https://beej.us/guide/bgnet/
 
-## Is this for me?
+## Có hợp với tôi không?
 
-If you can read Vietnamese and you want to learn how two computers talk
-to each other in C, yes. If you'd rather read the English, the [original
-guide][bgnet] is right there waiting for you.
+Nếu bạn đọc được tiếng Việt và muốn biết hai máy tính nói chuyện với
+nhau bằng C thế nào, thì hợp. Nếu bạn đọc được tiếng Anh thoải mái, cứ
+[đọc bản gốc][bgnet], nó ở ngay đó thôi.
 
-If you're a Vietnamese dev who has ever opened `<sys/socket.h>`,
-squinted at `struct sockaddr`, and quietly closed the tab, this repo is
-for you.
+Nếu bạn là một developer người Việt đã từng mở `<sys/socket.h>`, nhìn
+`struct sockaddr` một hồi rồi lặng lẽ đóng tab, thì repo này dành cho
+bạn đấy.
 
-## What you'll learn
+## Bạn sẽ học được gì
 
-Ten chapters, no fluff:
+Mười chương, không dài dòng:
 
-1. Introduction &mdash; what this guide is, who it's for
-2. What is a Socket? &mdash; the big picture
-3. IP Addresses, `struct`s, and Data Munging &mdash; bytes, endianness,
+1. Giới thiệu &mdash; tài liệu này là gì, dành cho ai
+2. Socket là gì? &mdash; bức tranh tổng thể
+3. Địa chỉ IP, `struct`, và xử lý dữ liệu &mdash; byte, endianness,
    `sockaddr`
-4. Jumping from IPv4 to IPv6 &mdash; what changed, what didn't
-5. System Calls or Bust &mdash; `socket()`, `bind()`, `listen()`,
-   `accept()`, `connect()`, `send()`, `recv()`, and friends
-6. Client-Server Background &mdash; your first real programs
-7. Slightly Advanced Techniques &mdash; `select()`, `poll()`, partial
-   `send()`s, serialization, broadcast
-8. Common Questions &mdash; the stuff people keep asking Beej
-9. Man Pages &mdash; a curated tour
-10. More References &mdash; where to go next
+4. Từ IPv4 nhảy sang IPv6 &mdash; cái gì đổi, cái gì giữ nguyên
+5. System call hoặc không gì cả &mdash; `socket()`, `bind()`,
+   `listen()`, `accept()`, `connect()`, `send()`, `recv()`, và bè
+   bạn
+6. Nền tảng client-server &mdash; chương trình thực sự đầu tiên của bạn
+7. Kỹ thuật nâng cao một chút &mdash; `select()`, `poll()`, `send()`
+   gửi từng phần, serialization, broadcast
+8. Câu hỏi thường gặp &mdash; những gì mọi người hay hỏi Beej
+9. Man page &mdash; một tour có chọn lọc
+10. Tài liệu tham khảo thêm &mdash; đi tiếp từ đâu
 
-## Status
+## Tình trạng
 
-Translation is ongoing, one chapter at a time. Track progress in
-[ROADMAP.md](ROADMAP.md) or issue
+Bản dịch đang làm, mỗi lần một chương. Theo dõi tiến độ trong
+[ROADMAP.md](ROADMAP.md) hoặc issue
 [#1](https://github.com/tamnd/bgnet-vi/issues/1).
 
-| # | Chapter | Status |
-|---|---------|--------|
-| 1 | Introduction | in review ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
-| 2 | What is a Socket? | not started |
-| 3 | IP Addresses, structs, and Data Munging | not started |
-| 4 | Jumping from IPv4 to IPv6 | not started |
-| 5 | System Calls or Bust | not started |
-| 6 | Client-Server Background | not started |
-| 7 | Slightly Advanced Techniques | not started |
-| 8 | Common Questions | not started |
-| 9 | Man Pages | not started |
-| 10 | More References | not started |
+| # | Chương | Tình trạng |
+|---|--------|------------|
+| 1 | Giới thiệu | đang review ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
+| 2 | Socket là gì? | chưa bắt đầu |
+| 3 | Địa chỉ IP, struct, và xử lý dữ liệu | chưa bắt đầu |
+| 4 | Từ IPv4 nhảy sang IPv6 | chưa bắt đầu |
+| 5 | System call hoặc không gì cả | chưa bắt đầu |
+| 6 | Nền tảng client-server | chưa bắt đầu |
+| 7 | Kỹ thuật nâng cao một chút | chưa bắt đầu |
+| 8 | Câu hỏi thường gặp | chưa bắt đầu |
+| 9 | Man page | chưa bắt đầu |
+| 10 | Tài liệu tham khảo thêm | chưa bắt đầu |
 
-## Repo layout
+## Bố cục repo
 
 ```
 bgnet-vi/
-├── src/         # English originals (from upstream, do not edit)
-├── src_vi/      # Vietnamese translations (the interesting stuff)
-├── source/      # Example C programs (unchanged from upstream)
-├── translations/# Other-language builds shipped by upstream
-├── website/     # Upstream website assets
-├── ROADMAP.md   # Translation plan and progress
-├── LICENSE     # CC BY-NC-ND 3.0, same as upstream
-└── README.md   # You are here
+├── src/         # Bản gốc tiếng Anh (lấy từ upstream, không sửa)
+├── src_vi/      # Bản dịch tiếng Việt (phần hay ho ở đây)
+├── source/      # Chương trình C mẫu (giữ nguyên từ upstream)
+├── translations/# Các bản dịch ngôn ngữ khác có sẵn từ upstream
+├── website/     # Tài nguyên website của upstream
+├── ROADMAP.md   # Kế hoạch và tiến độ dịch
+├── LICENSE     # CC BY-NC-ND 3.0, giống upstream
+└── README.md   # Bạn đang ở đây
 ```
 
-Each translated chapter in `src_vi/` matches a file in `src/` one-to-one
-(same filename, same section anchors). That way you can always diff the
-two to spot drift.
+Mỗi chương đã dịch trong `src_vi/` tương ứng một-một với file trong
+`src/` (cùng tên file, cùng section anchor). Như vậy bạn luôn có thể
+diff hai file để phát hiện chỗ lệch.
 
-## How to read
+## Cách đọc
 
-**Online:** the rendered Vietnamese book will land at a TBD URL once
-enough chapters are done. Until then, read the markdown directly in
-`src_vi/`, GitHub renders it fine.
+**Trên web:** bản HTML tiếng Việt sẽ được host tại một URL chưa chốt
+khi có đủ chương. Trước mắt, đọc thẳng markdown trong `src_vi/`,
+GitHub render vẫn ổn.
 
-**Offline:** clone the repo, open any file in `src_vi/` with a markdown
-reader. That's it.
+**Offline:** clone repo về, mở bất kỳ file nào trong `src_vi/` bằng
+trình đọc markdown. Thế thôi.
 
-**Build the PDF/HTML yourself:** see [Building](#building) below.
+**Tự build PDF/HTML:** xem phần [Build](#build) bên dưới.
 
-## Contributing
+## Đóng góp
 
-Pull requests welcome. A few ground rules so the text stays readable:
+Pull request luôn được chào đón. Vài quy tắc để giữ văn bản dễ đọc:
 
-- **One chapter per PR.** Don't batch. Small PRs get merged, big PRs
-  sit.
-- **Translate meaning, not words.** If a literal translation reads like
-  a robot wrote it, rewrite it. Beej's tone is casual; yours should be
-  too.
-- **No machine translation.** Seriously. We can tell. If you don't have
-  time to polish, don't submit.
-- **Keep code blocks, function names, and `man` page references in
-  English.** `bind()` stays `bind()`. `struct sockaddr` stays `struct
-  sockaddr`.
-- **First use of a technical term:** give the English word first, then
-  Vietnamese in parentheses if it helps. Subsequent uses can drop the
-  Vietnamese.
-- **No em dashes in Vietnamese prose.** Rewrite the sentence or use a
-  comma.
-- **Section anchors stay intact.** If the English says `{#windows}`,
-  the Vietnamese says `{#windows}`.
+- **Mỗi PR một chương.** Đừng gộp. PR nhỏ được merge nhanh, PR lớn nằm
+  đó.
+- **Dịch ý, không dịch chữ.** Nếu bản dịch nguyên văn đọc như máy viết,
+  viết lại. Giọng Beej đời thường, giọng bạn cũng nên vậy.
+- **Không dịch máy.** Nghiêm túc đấy. Đọc là biết liền. Nếu bạn không có
+  thời gian trau chuốt, đừng gửi.
+- **Giữ nguyên code block, tên hàm, và tên trang `man` bằng tiếng
+  Anh.** `bind()` vẫn là `bind()`. `struct sockaddr` vẫn là
+  `struct sockaddr`.
+- **Lần đầu xuất hiện một thuật ngữ kỹ thuật:** viết tiếng Anh trước,
+  tiếng Việt trong ngoặc nếu có ích. Các lần sau có thể bỏ tiếng Việt.
+- **Không dùng em dash trong văn xuôi tiếng Việt.** Viết lại câu hoặc
+  dùng dấu phẩy.
+- **Giữ nguyên section anchor.** Tiếng Anh là `{#windows}` thì tiếng
+  Việt cũng `{#windows}`.
 
-### Workflow
+### Quy trình
 
-1. Pick a chapter from the table above that says "not started".
-2. Open an issue saying you're taking it, so no one duplicates work.
-3. Branch: `translate/<chapter-slug>` (e.g. `translate/socket`).
-4. Copy `src/bgnet_part_NNNN_<slug>.md` to `src_vi/` with the same
-   filename. Translate in place.
-5. Open a PR against `main`. Reference the ROADMAP issue.
-6. Expect review. The goal is prose that reads like a Vietnamese
-   developer wrote it from scratch, not a translation.
+1. Chọn một chương ở bảng trên đang ghi "chưa bắt đầu".
+2. Mở issue nói bạn đang nhận chương đó, tránh trùng việc với người
+   khác.
+3. Tạo nhánh: `translate/<slug-chương>` (ví dụ `translate/socket`).
+4. Copy `src/bgnet_part_NNNN_<slug>.md` sang `src_vi/` với cùng tên
+   file. Dịch trực tiếp trên đó.
+5. Mở PR vào nhánh `main`. Tham chiếu đến issue ROADMAP.
+6. Chờ review. Mục tiêu là văn bản đọc như một developer người Việt tự
+   viết từ đầu, không phải dịch máy.
 
-### What reviewers look for
+### Reviewer sẽ xem gì
 
-- Does it read naturally out loud?
-- Do the jokes still land?
-- Are code blocks untouched?
-- Are anchor links and image references intact?
-- Any machine-translated phrasing sneaking in?
+- Đọc to lên có tự nhiên không?
+- Các câu đùa có còn duyên không?
+- Code block có bị động vào không?
+- Link anchor và ảnh có còn nguyên không?
+- Có câu nào dịch máy lọt vào không?
 
-## Building
+## Build
 
-This repo mirrors the upstream build setup. To produce PDF/HTML
-yourself, follow the upstream instructions:
+Repo này giữ nguyên hệ thống build của upstream. Để tự tạo PDF/HTML,
+làm theo hướng dẫn upstream:
 
-- [Upstream README][upstream-readme] for dependencies (`pandoc`,
-  `xelatex`, Liberation fonts)
-- [`bgbspd`][bgbspd] build system (clone as a sibling directory)
+- [README upstream][upstream-readme] cho dependency (`pandoc`,
+  `xelatex`, font Liberation)
+- Hệ thống build [`bgbspd`][bgbspd] (clone về làm thư mục song song)
 
-Then, from the repo root:
+Sau đó, tại thư mục gốc repo:
 
 ```
 make all
 ```
 
-Or via Docker:
+Hoặc qua Docker:
 
 ```
 docker build -t bgnet-vi-builder .
 docker run --rm -v "$PWD":/guide -ti bgnet-vi-builder
 ```
 
-The build targets the English sources in `src/`. A separate
-Vietnamese-only target is TODO; until then, swap `src/` for `src_vi/`
-locally to build the Vietnamese edition.
+Build hiện đang nhắm vào bản tiếng Anh trong `src/`. Target riêng cho
+tiếng Việt còn TODO. Trước mắt, thay `src/` bằng `src_vi/` ở máy
+local để build bản tiếng Việt.
 
 [upstream-readme]: https://github.com/beejjorgensen/bgnet/blob/main/README.md
 [bgbspd]: https://github.com/beejjorgensen/bgbspd
 
-## Sync with upstream
+## Đồng bộ với upstream
 
-Upstream commit the translation tracks: `9fb2a78` (beejjorgensen/bgnet,
-main branch).
+Commit upstream mà bản dịch này bám theo: `9fb2a78`
+(beejjorgensen/bgnet, nhánh main).
 
-When upstream ships changes, we re-sync `src/` against upstream, then
-the diff tells us which translated chapters need touch-ups. If you
-notice drift, open an issue.
+Khi upstream có cập nhật, chúng tôi đồng bộ lại `src/` theo upstream,
+rồi diff sẽ cho biết chương dịch nào cần chỉnh lại. Nếu bạn phát hiện
+lệch, mở issue.
 
-## Credits
+## Ghi công
 
-- **Original guide:** Brian "Beej Jorgensen" Hall, 1995-present,
+- **Tài liệu gốc:** Brian "Beej Jorgensen" Hall, 1995 đến nay,
   https://beej.us/guide/bgnet/
-- **Vietnamese translation:** Duc-Tam Nguyen (tamnd@liteio.dev) and
-  [contributors](https://github.com/tamnd/bgnet-vi/graphs/contributors)
+- **Bản dịch tiếng Việt:** Duc-Tam Nguyen (tamnd@liteio.dev) và
+  [cộng đồng đóng góp](https://github.com/tamnd/bgnet-vi/graphs/contributors)
 
-## License
+## Giấy phép
 
-[CC BY-NC-ND 3.0](LICENSE), same as upstream. You can read it, share
-it, and translate it. You can't sell it or make derivative works (other
-than translations, which upstream explicitly permits). Source code in
-the guide is public domain.
+[CC BY-NC-ND 3.0](LICENSE), giống upstream. Bạn được đọc, được chia sẻ,
+và được dịch. Bạn không được bán hay tạo tác phẩm phái sinh (trừ bản
+dịch, upstream cho phép rõ ràng). Code trong tài liệu là public domain.
 
-Full text: [LICENSE](LICENSE) &middot; [Creative Commons
-page](https://creativecommons.org/licenses/by-nc-nd/3.0/).
+Toàn văn: [LICENSE](LICENSE) &middot; [trang của Creative
+Commons](https://creativecommons.org/licenses/by-nc-nd/3.0/).
