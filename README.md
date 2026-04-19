@@ -52,8 +52,8 @@ Bản dịch đang làm, mỗi lần một chương. Theo dõi tiến độ tron
 
 | # | Chương | Tình trạng |
 |---|--------|------------|
-| 1 | Giới thiệu | đang review ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
-| 2 | Socket là gì? | chưa bắt đầu |
+| 1 | Giới thiệu | ✅ xong ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
+| 2 | Socket là gì? | đang review |
 | 3 | Địa chỉ IP, struct, và xử lý dữ liệu | chưa bắt đầu |
 | 4 | Từ IPv4 nhảy sang IPv6 | chưa bắt đầu |
 | 5 | System call hoặc không gì cả | chưa bắt đầu |
