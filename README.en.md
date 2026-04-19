@@ -52,8 +52,8 @@ Translation is ongoing, one chapter at a time. Track progress in
 | # | Chapter | Status |
 |---|---------|--------|
 | 1 | Introduction | ✅ done ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
-| 2 | What is a Socket? | in review |
-| 3 | IP Addresses, structs, and Data Munging | not started |
+| 2 | What is a Socket? | ✅ done ([#3](https://github.com/tamnd/bgnet-vi/pull/3)) |
+| 3 | IP Addresses, structs, and Data Munging | in review |
 | 4 | Jumping from IPv4 to IPv6 | not started |
 | 5 | System Calls or Bust | not started |
 | 6 | Client-Server Background | not started |
