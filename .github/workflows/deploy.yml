@@ -33,12 +33,7 @@ jobs:
             zip \
             python3 \
             pandoc \
-            texlive-xetex \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-fonts-extra \
-            texlive-lang-other \
+            texlive-full \
             fonts-dejavu \
             fonts-liberation \
             fonts-linuxlibertine \
