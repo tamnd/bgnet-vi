@@ -14,8 +14,8 @@ This document tracks the translation progress for Beej's Guide to Network Progra
 | bgnet_part_0600_clientserver.md | Client-Server Background | done |
 | bgnet_part_0700_advanced.md | Slightly Advanced Techniques | done |
 | bgnet_part_0800_questions.md | Common Questions | done |
-| bgnet_part_0900_man.md | Man Pages | in review |
-| bgnet_part_1000_ref.md | More References | not started |
+| bgnet_part_0900_man.md | Man Pages | done |
+| bgnet_part_1000_ref.md | More References | in review |
 
 ## Guidelines
 
