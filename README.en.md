@@ -46,21 +46,9 @@ Ten chapters, no fluff:
 ## Status
 
 Translation is ongoing, one chapter at a time. Track progress in
-[ROADMAP.md](ROADMAP.md) or issue
-[#1](https://github.com/tamnd/bgnet-vi/issues/1).
-
-| # | Chapter | Status |
-|---|---------|--------|
-| 1 | Introduction | ✅ done ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
-| 2 | What is a Socket? | ✅ done ([#3](https://github.com/tamnd/bgnet-vi/pull/3)) |
-| 3 | IP Addresses, structs, and Data Munging | in review |
-| 4 | Jumping from IPv4 to IPv6 | not started |
-| 5 | System Calls or Bust | not started |
-| 6 | Client-Server Background | not started |
-| 7 | Slightly Advanced Techniques | not started |
-| 8 | Common Questions | not started |
-| 9 | Man Pages | not started |
-| 10 | More References | not started |
+[ROADMAP.md](ROADMAP.md), issue
+[#1](https://github.com/tamnd/bgnet-vi/issues/1), or the
+[merged PRs](https://github.com/tamnd/bgnet-vi/pulls?q=is%3Apr+is%3Amerged).
 
 ## Repo layout
 
