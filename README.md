@@ -47,21 +47,9 @@ Mười chương, không dài dòng:
 ## Tình trạng
 
 Bản dịch đang làm, mỗi lần một chương. Theo dõi tiến độ trong
-[ROADMAP.md](ROADMAP.md) hoặc issue
-[#1](https://github.com/tamnd/bgnet-vi/issues/1).
-
-| # | Chương | Tình trạng |
-|---|--------|------------|
-| 1 | Giới thiệu | ✅ xong ([#2](https://github.com/tamnd/bgnet-vi/pull/2)) |
-| 2 | Socket là gì? | đang review |
-| 3 | Địa chỉ IP, struct, và xử lý dữ liệu | chưa bắt đầu |
-| 4 | Từ IPv4 nhảy sang IPv6 | chưa bắt đầu |
-| 5 | System call hoặc không gì cả | chưa bắt đầu |
-| 6 | Nền tảng client-server | chưa bắt đầu |
-| 7 | Kỹ thuật nâng cao một chút | chưa bắt đầu |
-| 8 | Câu hỏi thường gặp | chưa bắt đầu |
-| 9 | Man page | chưa bắt đầu |
-| 10 | Tài liệu tham khảo thêm | chưa bắt đầu |
+[ROADMAP.md](ROADMAP.md), issue
+[#1](https://github.com/tamnd/bgnet-vi/issues/1), hoặc xem
+[các PR đã merge](https://github.com/tamnd/bgnet-vi/pulls?q=is%3Apr+is%3Amerged).
 
 ## Bố cục repo
 
